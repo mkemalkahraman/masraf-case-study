@@ -1,5 +1,19 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Masraf Case Study</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A personal money tracker built as a progressive web app: one number for what you can still spend this month. Case study with invented data and no source code.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Masraf Case Study">
+<meta property="og:description" content="A personal money tracker built as a progressive web app: one number for what you can still spend this month. Case study with invented data and no source code.">
+<meta property="og:url" content="https://mkemalkahraman.github.io/masraf-case-study/">
+<meta property="og:image" content="https://mkemalkahraman.github.io/masraf-case-study/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Three phone screens of the Masraf app: overview, assistant and yearly payments calendar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mkemalkahraman.github.io/masraf-case-study/img/og.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
 <style>
 /* Layout concept: a studio case study. Phones are the content; the page is a quiet cool-grey stage with one deep-teal accent. */
@@ -15,7 +29,9 @@
 :root[data-theme="dark"]{
   --bg:#0e1514; --surface:#162120; --ink:#e8f0ee; --muted:#9db0ab; --line:#27373a; --accent:#4fd1c0; --accent-soft:#12302d; --spark:#e8b45a; --phone:#05090a; --stage:#121c1b; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
 .wrap{max-width:1080px;margin:0 auto}
 h1,h2,h3{font-family:var(--f-display);line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
@@ -236,13 +252,13 @@ footer{padding-block:0 40px;font-size:13px;color:var(--muted);font-family:var(--
   </div>
 </section>
 
-<section class="lessons">
+<section class="lessons" id="lessons">
   <span class="label">Lessons from real bugs</span>
   <h2>What went wrong, and what it changed</h2>
   <div class="grid">
-    <div class="card"><span class="tag">Money input</span><h3>A comma that silently changed the amount</h3><p>A number field dropped the Turkish decimal comma, so <code>12.345,67</code> was saved as <code>12,35</code>. It was caught on the first real use. Amount fields are now text inputs with their own parser, and a test covers every format.</p></div>
+    <div class="card"><span class="tag">Money input</span><h3>A comma that silently changed the amount</h3><p>A number field dropped the Turkish decimal comma, so <code>12.345,67</code> was saved as <code>12,35</code>. It was caught during real use. Amount fields are now text inputs with their own parser, and a test covers every format.</p></div>
     <div class="card"><span class="tag">Proof, not trust</span><h3>Matching the bank to the kuruş</h3><p>Daily savings interest was reproduced from a formula and checked against seven days of real bank statements until the totals matched exactly. When the bank changed the rate, the difference showed up the same week and was corrected.</p></div>
-    <div class="card"><span class="tag">Silent failure</span><h3>Pop-ups that were transparent for weeks</h3><p>A styling class that was never defined produced no CSS and no error, so dialogs had no background. The fix was a check that fails the build when a class has no style behind it.</p></div>
+    <div class="card"><span class="tag">Silent failure</span><h3>Pop-ups that had no background</h3><p>A styling class that was never defined produced no CSS and no error, so dialogs had no background. The fix was a check that fails the build when a class has no style behind it.</p></div>
     <div class="card"><span class="tag">Cost</span><h3>Twelve requests where one was needed</h3><p>The notes card fired a dozen parallel AI requests while data was still loading. Looking at the request log, not the code, found it. It now waits for the data and shares one request. Lesson: count calls before you pay per call.</p></div>
   </div>
 </section>
