@@ -9,7 +9,7 @@
   <img src="img/yearly.webp" width="24%" alt="Twelve-month calendar of large payments">
 </p>
 
-**Read the full case study:** open `index.html` in a browser, or use the published page (link will be added here).
+**Read the full case study:** https://mkemalkahraman.github.io/masraf-case-study/
 
 ## At a glance
 
