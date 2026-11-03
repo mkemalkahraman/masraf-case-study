@@ -12,12 +12,12 @@
 - Next.js 16, React 19, Supabase (Postgres, Auth, Storage), Claude API
 - All money logic runs in Postgres functions, in one transaction per change
 - Row-level security, email one-time-code sign-in, hashed on-device PIN, encrypted weekly backups
-- 1,500+ unit tests and about 390 database tests
+- 1,600+ unit tests and about 400 database tests
 - An in-app assistant that answers from server-calculated figures; the language model only classifies the question
 
 ## What it does
 
-- **Overview:** one number for what is left to spend this month, with upcoming card payments and subscriptions right under it
+- **Overview:** one number for what is left to spend this month (cash plus savings that earn daily interest, minus card bills, instalments and subscriptions), with upcoming card payments and subscriptions right under it
 - **Accounts:** cards, overdrafts, a loan and savings in one list, each behaving the way its bank does
 - **Analysis:** a month's spending sorted by size, compared with the previous month, by purchase month or by payment month
 - **Add:** type an amount, scan a receipt, record a payment between accounts or log a fuel stop

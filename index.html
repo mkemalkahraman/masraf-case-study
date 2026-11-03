@@ -132,8 +132,8 @@ footer{padding-block:0 40px;font-size:13px;color:var(--muted);font-family:var(--
 
 <section class="facts" aria-label="Project facts">
   <div><b>1 user</b><span>built around one person's real month</span></div>
-  <div><b>1,500+</b><span>unit tests, no network needed</span></div>
-  <div><b>390+</b><span>database tests on Postgres 16</span></div>
+  <div><b>1,600+</b><span>unit tests, no network needed</span></div>
+  <div><b>400</b><span>database tests on Postgres 16</span></div>
   <div><b>0</b><span>store listings. It installs from the browser</span></div>
 </section>
 
@@ -148,7 +148,7 @@ footer{padding-block:0 40px;font-size:13px;color:var(--muted);font-family:var(--
   <div class="copy">
     <span class="label">Overview</span>
     <h2>One number before anything else</h2>
-    <p>The top card shows what is left to spend this month. It subtracts the card bills due this month and the subscriptions still to be charged, and it shows the smaller figure you would have if you only paid the card minimums.</p>
+    <p>The top card shows what is left to spend this month. It starts from cash plus any savings that earn interest every day (money that can be moved to pay a bill when needed) and subtracts the card bills due this month, the loan instalments and the subscriptions still to be charged. It also shows the figure you would have if you only paid the card minimums.</p>
     <ul>
       <li>Upcoming card payments and subscriptions sit directly under the number</li>
       <li>Amounts are hidden every time the app opens; one tap reveals them</li>
@@ -166,7 +166,7 @@ footer{padding-block:0 40px;font-size:13px;color:var(--muted);font-family:var(--
   <div class="copy">
     <span class="label">Accounts</span>
     <h2>Cards, overdrafts, a loan and savings in one list</h2>
-    <p>Each account type behaves the way its bank does. Credit cards track debt and remaining limit, overdraft accounts spend cash first and debt second, loans count down their instalments, and savings accounts are kept out of the spendable total.</p>
+    <p>Each account type behaves the way its bank does. Credit cards track debt and remaining limit, overdraft accounts spend cash first and debt second, loans count down their instalments, and savings that earn daily interest count as spendable money while pension and fund balances stay out of it.</p>
     <ul>
       <li>Statement amount, minimum payment and due date per card</li>
       <li>Weekend and public-holiday rules move due dates the way banks do</li>
@@ -285,6 +285,7 @@ footer{padding-block:0 40px;font-size:13px;color:var(--muted);font-family:var(--
     <li><b>Mid October</b><span>Loans, savings interest, income and salary handling, a new identity with a warmer palette, three themes.</span></li>
     <li><b>Late October</b><span>Encrypted weekly backups, the in-app assistant, notes and reminders, a morning summary email.</span></li>
     <li><b>End of October</b><span>Yearly subscriptions and the twelve-month calendar of large payments; the assistant's log for extending its rules by hand.</span></li>
+    <li><b>Early November</b><span>The code base reorganised by feature, with a check that fails the build when a file grows past 500 lines; secret and workflow-security scans added to continuous integration; the spendable figure now counts savings that earn daily interest.</span></li>
   </ol>
 </section>
 
